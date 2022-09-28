@@ -707,6 +707,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 754683386}
     m_Modifications:
+    - target: {fileID: 648520759688875039, guid: 8e6c0a2ad4b70884e9db57f3e8baf92a, type: 3}
+      propertyPath: id
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7174204473084834912, guid: 8e6c0a2ad4b70884e9db57f3e8baf92a, type: 3}
       propertyPath: m_Name
       value: PaddleRight
@@ -1152,6 +1156,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 754683386}
     m_Modifications:
+    - target: {fileID: 648520759688875039, guid: 8e6c0a2ad4b70884e9db57f3e8baf92a, type: 3}
+      propertyPath: id
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7174204473084834912, guid: 8e6c0a2ad4b70884e9db57f3e8baf92a, type: 3}
       propertyPath: m_Name
       value: PaddleLeft
