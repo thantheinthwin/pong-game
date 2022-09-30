@@ -4,12 +4,14 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
     public int scorePlayer1, scorePlayer2;
     public scoreText scoreTextLeft, scoreTextRight;
     public GameObject titleScreen;
+    public UnityEvent GameOver;
 
     public void onScoreZoneReached(int id)
     {
@@ -34,6 +36,8 @@ public class GameManager : MonoBehaviour
 
     public void gameOver()
     {
-        
+        Debug.Log("Game Over");
+        Time.timeScale = 0;
+        GameOver.Invoke();
     }
 }

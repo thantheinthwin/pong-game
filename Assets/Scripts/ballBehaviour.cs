@@ -10,6 +10,7 @@ public class ballBehaviour : MonoBehaviour
     [SerializeField] float moveSpeed = 1f;
     [SerializeField] float startX = 0f;
     [SerializeField] float maxStartY = 4f;
+    public int gamePoint = 3;
 
     private void Start()
     {
@@ -42,7 +43,10 @@ public class ballBehaviour : MonoBehaviour
             gameManager.onScoreZoneReached(scoreZone.id);
             resetBall();
             InitialPush();
-            if(gameManager.scorePlayer1 == 11 || gameManager.scorePlayer2 == 11)
+
+            Debug.Log("Game Point : " +  gamePoint);
+
+            if(gameManager.scorePlayer1 == gamePoint || gameManager.scorePlayer2 == gamePoint)
             {
                 gameManager.gameOver();
             }
