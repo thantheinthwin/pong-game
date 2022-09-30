@@ -11,8 +11,7 @@ public class ballBehaviour : MonoBehaviour
     [SerializeField] float startX = 0f;
     [SerializeField] float maxStartY = 4f;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         InitialPush();
     }
@@ -24,7 +23,7 @@ public class ballBehaviour : MonoBehaviour
         transform.position = position;
     }
 
-    private void InitialPush()
+    public void InitialPush()
     {
         Vector2 dir = Random.value < 0.5f ? Vector2.left : Vector2.right;
       
@@ -43,6 +42,10 @@ public class ballBehaviour : MonoBehaviour
             gameManager.onScoreZoneReached(scoreZone.id);
             resetBall();
             InitialPush();
+            if(gameManager.scorePlayer1 == 11 || gameManager.scorePlayer2 == 11)
+            {
+                gameManager.gameOver();
+            }
         }
     }
 }
