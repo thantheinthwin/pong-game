@@ -40,4 +40,9 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
         GameOver.Invoke();
     }
+
+    public void restartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 }
