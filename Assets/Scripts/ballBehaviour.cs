@@ -11,6 +11,7 @@ public class ballBehaviour : MonoBehaviour
     [SerializeField] float startX = 0f;
     [SerializeField] float maxStartY = 4f;
     public int gamePoint = 3;
+    public TMPro.TextMeshProUGUI winner;
 
     private void Start()
     {
@@ -46,8 +47,21 @@ public class ballBehaviour : MonoBehaviour
 
             Debug.Log("Game Point : " +  gamePoint);
 
-            if(gameManager.scorePlayer1 == gamePoint || gameManager.scorePlayer2 == gamePoint)
+            // Statement for dues points
+            if(gameManager.scorePlayer1 == gameManager.scorePlayer2 && gameManager.scorePlayer1 == gamePoint-1)
             {
+                gamePoint++;
+            }
+
+
+            if(gameManager.scorePlayer1 == gamePoint)
+            {
+                winner.text = "Player 1 won";
+                gameManager.gameOver();
+            }
+            else if (gameManager.scorePlayer2 == gamePoint)
+            {
+                winner.text = "Player 2 won";
                 gameManager.gameOver();
             }
         }

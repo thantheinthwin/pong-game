@@ -2094,6 +2094,7 @@ MonoBehaviour:
   startX: 0
   maxStartY: 4
   gamePoint: 3
+  winner: {fileID: 266354102}
 --- !u!1001 &6448651369281272827
 PrefabInstance:
   m_ObjectHideFlags: 0
