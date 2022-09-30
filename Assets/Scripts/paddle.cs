@@ -7,6 +7,7 @@ public class paddle : MonoBehaviour
     public Rigidbody2D rb2d;
     public float id;
     public float moveSpeed = 2.0f;
+    public AudioSource pingpong;
 
     private void Update()
     {
@@ -36,5 +37,13 @@ public class paddle : MonoBehaviour
         Vector2 velo = rb2d.velocity;
         velo.y = moveSpeed * value;
         rb2d.velocity = velo;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.CompareTag("Ball"))
+        {
+            pingpong.Play();
+        }
     }
 }
